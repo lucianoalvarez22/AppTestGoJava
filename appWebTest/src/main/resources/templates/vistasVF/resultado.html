@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Título de la Página</title>
+    <style>
+		body {
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+}
+
+h1 {
+    color: #007bff;
+}
+
+.alert {
+    margin-top: 20px;
+}
+
+.btn {
+    margin-top: 10px;
+}
+
+	</style>
+    
+    <!-- Enlace al archivo de estilo CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Enlace a Bootstrap (puedes reemplazarlo con tu propio enlace de Bootstrap) -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+    <div class="container mt-5">
+        <h1 class="text-center">Solución</h1>
+
+        <div class="alert" th:classappend="${acertada} ? 'alert-success' : 'alert-danger'" role="alert">
+    <span th:text="${acertada} ? 'Respuesta acertada' : 'Respuesta incorrecta'"></span>
+</div>
+
+
+        <a class="btn btn-primary" href="/preguntavf">Siguiente Pregunta</a>
+        <a class="btn btn-secondary" href="/home">Ir a Home</a>
+    </div>
+
+    <!-- Scripts de Bootstrap (puedes reemplazarlo con tu propio enlace de Bootstrap) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

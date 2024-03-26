@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Realizando Test</title>
+   <style>
+	   
+.titulo {
+    text-align: center; /* Centra el texto */
+    font-size: 3em; /* Tamaño de la fuente */
+    color: #007bff; /* Color del texto, puedes cambiarlo según tu preferencia */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra del texto para un efecto más dramático */
+    margin-bottom: 20px; /* Espacio inferior para separar del contenido siguiente */
+}
+
+.caja-form {
+        max-width: 400px; /* Ancho máximo de la caja */
+        margin: 20px auto; /* Centrar la caja en el medio de la página */
+        padding: 20px; /* Espaciado interno */
+        border: 1px solid #ccc; /* Borde con color gris claro */
+        border-radius: 5px; /* Esquinas redondeadas */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        text-align: center;
+    }
+
+    /* Estilo para el botón */
+    .caja-form button {
+        background-color: #4caf50; /* Color de fondo verde */
+        color: white; /* Color del texto blanco */
+        padding: 10px 15px; /* Espaciado interno del botón */
+        border: none; /* Sin borde */
+        border-radius: 3px; /* Esquinas redondeadas */
+        cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
+        display: inline-block;
+    }
+
+    /* Estilo para el input de archivo */
+    .caja-form input[type="file"] {
+        margin-bottom: 10px; /* Espaciado inferior */
+    }
+	
+
+
+        
+ footer {
+  background-color: var(--color-txt-main);
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-top: 2px; /* Cambia el valor según tus preferencias */
+  padding-bottom: 2px;
+  color: var(--color-white);
+}
+    </style>
+  <!-- google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+   
+  <!-- google font -->
+  <!-- boxicons -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <!-- boxicons -->
+  <!-- swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <!-- swiper -->
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+  <!-- header -->
+  <header>
+      
+    <div class="container">
+      <div class="header__content" id="header__content">
+        <button class="btn-open-menu" id="btn-open-menu">
+          <i class="bx bx-menu"></i>
+        </button>
+        
+        <div class="header__logo">
+			<a th:href="@{/home}"><img src="/img/xing-logo-240.png" alt="logo"></a>
+        </div>
+        
+        
+        <nav>
+          <button class="btn-close-menu" id="btn-close-menu">
+            <i class="bx bx-left-arrow-alt"></i>
+          </button>
+          
+          <ul>
+			  
+			<li>
+              <a th:href="@{/home}">Home</a>
+            </li>
+            
+            <li>
+              <a th:href="@{/contenido}">Contenidos</a> 
+            </li>
+            
+           <li>
+              <a href="#">Contacto</a>
+            </li>
+            
+ 
+          </ul>
+        </nav>
+        <div class="header__menu">
+          <ul>
+            
+            <!-- aqui puede ir otra etiqueta -->
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- header -->
+  
+  <!-- FORM DE PREGUNTAS SC TEST --> 
+  
+ 
+<h2 class="titulo">Subir Archivo</h2>
+
+<div class="caja-form">
+
+<form th:action="@{/upload}" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" accept=".pdf, .doc, .docx, .txt, .jpg, .jpeg, .png">
+    <br/>
+    <button type="submit">Subir Archivo</button>
+</form>
+
+</div>
+	
+	<!-- AQUI TERMINA EL FORM -->
+
+  <!-- footer -->
+  <footer>
+  <div class="container">
+    <div class="footer">
+      <div class="footer__col">
+        <a href="#" class="logo">
+          <img src="/img/xing-logo-240.png" alt="logo">
+        </a>
+        
+        <div class="social-list">
+          <a href="#">
+            <i class="bx bxl-facebook"></i>
+          </a>
+          <a href="#">
+            <i class="bx bxl-instagram"></i>
+          </a>
+          <a href="#">
+            <i class="bx bxl-youtube"></i>
+          </a>
+          <a href="#">
+            <i class="bx bxl-twitter"></i>
+          </a>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</footer>
+  <!-- footer -->
+
+  <!-- swiper -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <!-- swiper -->
+  <script src="/js/app.js"></script>
+  <!-- Bootstrap JS -->
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+</body>
+
+</html>

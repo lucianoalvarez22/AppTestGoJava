@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TestGo SistemasERP</title>
+  <!-- google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <!-- google font -->
+  <!-- boxicons -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <!-- boxicons -->
+  <!-- swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <!-- swiper -->
+
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+  <!-- header -->
+  <header>
+      
+    <div class="container">
+      <div class="header__content" id="header__content">
+        <button class="btn-open-menu" id="btn-open-menu">
+          <i class="bx bx-menu"></i>
+        </button>
+        
+        <div class="header__logo">
+			<a th:href="@{/home}"><img src="/img/xing-logo-240.png" alt="logo"></a>
+        </div>
+        
+        
+        <nav>
+          <button class="btn-close-menu" id="btn-close-menu">
+            <i class="bx bx-left-arrow-alt"></i>
+          </button>
+          
+          <ul>
+			  
+			<li>
+              <a th:href="@{/home}">Home</a>
+            </li>
+            
+            <li>
+              <a th:href="@{/contenido}">Contenidos</a> 
+            </li>
+            
+            
+            <li>
+              <a href="#">Contacto</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="header__menu">
+          <ul>
+			  
+			  <li>                      <!-- Nuevo elemento para Subir Archivo -->
+              <a th:href="@{/uploadForm}">Subir Archivo</a>
+             </li>
+           
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- header -->
+
+  <!-- hero slider -->
+  <section>
+    <div class="hero">
+      <div class="swiper hero__swiper">
+        <div class="swiper-wrapper">
+			
+          <!-- slide item -->
+          <div class="swiper-slide">
+            <div class="hero__bg bg-image" 
+              style="background-image: url(/img/bg/fondo.jpg);"></div>
+            <div class="container">
+              <div class="hero__content">
+                <div class="hero__txt">
+                  <h2>Sistemas ERP</h2>
+                  <p>Test relacionado sobre los Sistemas ERP-CRM</p>
+				 
+                </div>
+                <div class="hero__img">
+                   <img src="/img/products/Test1.png" alt="product image">
+                </div>
+              </div>
+            </div>
+          </div>
+
+    </div>
+  </section>
+  <!-- hero slider -->
+
+  <!-- top products -->
+  <section>
+    <div class="container">
+      <div class="top-product__header">
+        <h2 class="section__title no-margin">Tipo de Preguntas</h2>
+      
+      </div>
+      <div class="swiper top-product__swiper">
+        <div class="swiper-wrapper">
+			
+			
+          <!-- slide item -->
+          <div class="swiper-slide">
+            <div class="product-card">
+              <div class="product__image">
+				  <a th:href="@{/preguntavf}"><img src="/img/products/VF.png" alt="product image" title="Empezar Test V-F"></a>
+              </div>
+              <div class="product__info">
+				  <a th:href="@{/preguntavf}"><h5 class="product__name" title="Empezar Test V-F">Verdadero - Falso</h5></a>
+                <span class="product__price">¡Dos opciones: Verdadero y Falso!</span>
+              </div>
+            </div>
+          </div>
+          <!-- slide item -->
+          <!-- slide item -->
+          <div class="swiper-slide">
+            <div class="product-card">
+              <div class="product__image">
+				  <a th:href="@{/preguntasc}"><img src="/img/products/SC.png" alt="product image" title="Empezar Test Single-Choice"></a> 
+              </div>
+              <div class="product__info">
+				  <a th:href="@{/preguntasc}"><h5 class="product__name" title="Empezar Test Single-Choice">Single-Choice</h5></a>
+                <span class="product__price">¡Cuatro opciones y una respuesta correcta!</span>
+              </div>
+            </div>
+          </div>
+          <!-- slide item -->
+          <!-- slide item -->
+          <div class="swiper-slide">
+            <div class="product-card">
+              <div class="product__image">
+                <img src="/img/products/MULTI.png" alt="product image" title="Test en construcción">
+              </div>
+              <div class="product__info">
+                <h5 class="product__name" title="Test en construcción">Multiple-Choice</h5>
+                <span class="product__price">¡Cuatro opciones y más de una opción correcta!</span>
+              </div>
+            </div>
+          </div>
+          <!-- slide item -->
+          
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- top products -->
+
+  <!-- footer -->
+  <footer>
+  <div class="container">
+    <div class="footer">
+      <div class="footer__col">
+        <a href="#" class="logo">
+          <img src="/img/xing-logo-240.png" alt="logo">
+        </a>
+        
+        <div class="social-list">
+          <a href="#">
+            <i class="bx bxl-facebook"></i>
+          </a>
+          <a href="#">
+            <i class="bx bxl-instagram"></i>
+          </a>
+          <a href="#">
+            <i class="bx bxl-youtube"></i>
+          </a>
+          <a href="#">
+            <i class="bx bxl-twitter"></i>
+          </a>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</footer>
+  <!-- footer -->
+
+  <!-- swiper -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <!-- swiper -->
+  <script src="/js/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ResultadoPregunta</title>
+   <!-- Enlace al archivo de estilo CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Enlace a Bootstrap (puedes reemplazarlo con tu propio enlace de Bootstrap) -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+   <style>
+	   
+	   		body {
+    background-color: #f8f9fa;
+}
+
+h1 {
+    text-align: center; /* Centra el texto */
+    font-size: 3em; /* Tamaño de la fuente */
+    color: #007bff; /* Color del texto, puedes cambiarlo según tu preferencia */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Sombra del texto para un efecto más dramático */
+    margin-bottom: 20px; /* Espacio inferior para separar del contenido siguiente */
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+}
+
+ h1 {
+    text-align: center; /* Centra el texto */
+    font-size: 3em; /* Tamaño de la fuente */
+    color: #007bff; /* Color del texto, puedes cambiarlo según tu preferencia */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra del texto para un efecto más dramático */
+    margin-bottom: 20px; /* Espacio inferior para separar del contenido siguiente */
+}
+
+.button-container {
+    text-align: center;
+}
+
+.alert {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.btn {
+    margin-top: 10px;
+}
+
+ 
+
+        
+        footer {
+  background-color: var(--color-txt-main);
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-top: 2px; /* Cambia el valor según tus preferencias */
+  padding-bottom: 2px;
+  color: var(--color-white);
+}
+    </style>
+  <!-- google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+   
+  <!-- google font -->
+  <!-- boxicons -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <!-- boxicons -->
+  <!-- swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <!-- swiper -->
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+  <!-- header -->
+  <header>
+      
+    <div class="container">
+      <div class="header__content" id="header__content">
+        <button class="btn-open-menu" id="btn-open-menu">
+          <i class="bx bx-menu"></i>
+        </button>
+        
+        <div class="header__logo">
+			<a th:href="@{/home}"><img src="/img/xing-logo-240.png" alt="logo"></a>
+        </div>
+        
+        
+        <nav>
+          <button class="btn-close-menu" id="btn-close-menu">
+            <i class="bx bx-left-arrow-alt"></i>
+          </button>
+          
+          <ul>
+			  
+			<li>
+              <a th:href="@{/home}">Home</a>
+            </li>
+            
+            <li>
+              <a th:href="@{/contenido}">Contenidos</a> 
+            </li>
+            
+            <li>
+              <a th:href="@{/opcionesDeTest(opcion=${'Test ERP'})}">Tipo de Preguntas</a> 
+            </li>
+            
+            <li>
+              <a th:href="@{/preguntavf}">Empezar Test</a> 
+            </li>
+            
+ 
+          </ul>
+        </nav>
+        <div class="header__menu">
+          <ul>
+            
+             <li>
+              <a th:href="@{/listarVF}">Listar Preguntas</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <!-- RESPUESTA AQUI ESTA --> 
+  
+  
+    <h1 class="text-center" th:text="${titulo}"></h1> 
+ <div class="container mt-5">
+    <!-- Formulario -->
+    <form action="/saveVF" method="post">
+        <div class="form-group">
+            <label for="pregunta">Pregunta</label>
+            <input type="text" class="form-control" id="pregunta" name="pregunta-new" placeholder="Ingrese la pregunta" required>
+        </div>
+        
+         <div class="form-group">
+            <label for="respuestaCorrecta">Respuesta Correcta</label>
+            <select class="form-control" id="respuestaCorrecta" name="respuestaCorrecta-new">
+                <option value="verdadero">Verdadero</option>
+                <option value="falso">Falso</option>
+            </select>
+        </div>
+        
+        <input type="submit" class="btn btn-primary" value="Responder">     
+  
+    </form>
+</div>
+	
+	<!-- AQUI TERMINA RESPUESTA -->
+
+  <!-- footer -->
+  <footer>
+  <div class="container">
+    <div class="footer">
+      <div class="footer__col">
+        <a href="#" class="logo">
+          <img src="/img/xing-logo-240.png" alt="logo">
+        </a>
+        
+        <div class="social-list">
+          <a href="#">
+            <i class="bx bxl-facebook"></i>
+          </a>
+          <a href="#">
+            <i class="bx bxl-instagram"></i>
+          </a>
+          <a href="#">
+            <i class="bx bxl-youtube"></i>
+          </a>
+          <a href="#">
+            <i class="bx bxl-twitter"></i>
+          </a>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</footer>
+  <!-- footer -->
+
+  <!-- swiper -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <!-- swiper -->
+  <script src="/js/app.js"></script>
+  <!-- Bootstrap JS -->
+  
+  <!-- Scripts de Bootstrap (puedes reemplazarlo con tu propio enlace de Bootstrap) -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+  
+</body>
+
+</html>

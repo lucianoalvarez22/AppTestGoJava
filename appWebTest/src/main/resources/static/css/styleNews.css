@@ -1,0 +1,96 @@
+@charset "UTF-8";
+
+.cabecera{
+	text-align: center;
+	font-size: 24px;
+	margin-bottom: 20px; 
+			 
+ }
+ 
+ .divinfo{
+	 text-align: center;
+	  margin-bottom: 20px;
+ }
+ 
+ .divinfo:not(:last-child) {
+            margin-bottom: 30px;
+        }
+ 
+ .imagennews{
+            max-width: 100%;
+            height: auto;
+            width: 600px; 
+            height: 400px;
+        }
+
+    
+   .toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Estilos del slider del interruptor */
+.toggle-switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 34px;
+  transition: 0.4s;
+}
+
+/* Estilos del círculo del interruptor */
+.toggle-switch .slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+/* Estilos del interruptor cuando está activado (modo oscuro) */
+.toggle-switch input:checked + .slider {
+  background-color: #2196F3;
+}
+
+.toggle-switch input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Ocultar el input nativo */
+.toggle-switch input {
+  display: none;
+}
+
+/* Estilos adicionales para la etiqueta de texto junto al interruptor */
+.toggle-switch label {
+  margin-left: 10px; /* Ajusta el margen según sea necesario */
+  user-select: none;
+  cursor: pointer;
+  vertical-align: middle; /* Alinea verticalmente con respecto al interruptor */
+  color: #333; /* Ajusta el color del texto según sea necesario */
+  font-weight: bold; /* Ajusta el peso de la fuente según sea necesario */
+}
+
+.modeDark {
+  user-select: none;
+  cursor: pointer;
+  font-weight: bold; /* Ajusta el peso de la fuente según sea necesario */
+  margin-left: 10px; /* Ajusta el margen según sea necesario */
+  color: #333; /* Ajusta el color del texto según sea necesario */
+}
+
+/* Estilos adicionales para contenedor del interruptor y label */
+.toggle-switch-container {
+  display: flex;
+  align-items: center;
+}

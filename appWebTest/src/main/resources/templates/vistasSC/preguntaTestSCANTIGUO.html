@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${title}"></title>
+</head>
+<body>
+	
+    <form action="/preguntasc-post" method="post">
+	<input type="hidden" th:name="idPregunta" th:value="${preguntas.id}">
+	<p th:text="${preguntas.pregunta}"></p>
+        <ul>
+            <li th:each="opt: ${preguntas.opciones}">
+                <input type="radio" th:id="${opt}" name="respuesta" th:value="${opt}" required>
+                <label th:text="${opt}" th:for="${opt}"></label>
+            </li>
+            
+        <input type="submit" value="Responder">
+    </form>
+     
+    <div>
+			<li>	
+	    		<a th:href="@{/home}">Ir a Home</a>
+			</li>
+	</div>
+    
+
+</body>
+</html>

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResultadoPregunta</title>
+    
+    <style>
+		
+		body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            margin-top: 5%;
+        }
+
+        h1 {
+    text-align: center; /* Centra el texto */
+    font-size: 3em; /* Tamaño de la fuente */
+    color: #007bff; /* Color del texto, puedes cambiarlo según tu preferencia */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra del texto para un efecto más dramático */
+    margin-bottom: 20px; /* Espacio inferior para separar del contenido siguiente */
+}
+
+
+
+        .text-right {
+            text-align: right;
+            margin-top: 1rem;
+        }
+
+        .btn-add-question {
+            display: inline-block;
+            padding: 0.375rem 0.75rem;
+            font-size: 1rem;
+            border-radius: 0.25rem;
+            background-color: rgb(38, 162, 105);
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .table-responsive {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        th, td {
+            border: 1px solid #dee2e6;
+            padding: 0.75rem;
+            text-align: left;
+        }
+        
+        td ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    margin: 0;
+}
+
+li {
+    list-style-type: none;
+}
+
+        thead {
+            background-color: #343a40;
+            color: #fff;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        
+        .table thead th {
+    text-align: center;
+}
+
+.table tbody td {
+    text-align: center;
+}
+        
+.operation-buttons {
+    display: flex;
+    gap: 10px; /* Ajusta el espacio entre los botones según tus preferencias */
+}
+
+.edit-button,
+.delete-button {
+    flex: 1; /* Distribuye el espacio disponible de manera uniforme entre ambos botones */
+    padding: 8px 16px; /* Ajusta el espaciado interno según tus preferencias */
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid transparent; /* Borde transparente para resaltar */
+    border-radius: 4px; /* Bordes redondeados */
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease; /* Transiciones suaves */
+}
+
+.edit-button {
+    background-color: rgb(94, 92, 100); /* Fondo gris para el botón "Editar" */
+    color: rgb(255, 255, 255); /* Texto gris para el botón "Editar" */
+    border-color: #dee2e6; /* Borde gris para el botón "Editar" */
+}
+
+.delete-button {
+    background-color: #dc3545; /* Fondo rojo para el botón "Eliminar" */
+    color: #fff; /* Texto blanco para el botón "Eliminar" */
+    border-color: #dc3545; /* Borde rojo para el botón "Eliminar" */
+}
+
+.edit-button:hover,
+.delete-button:hover {
+    background-color: #007bff; /* Cambia el color de fondo al pasar el ratón */
+    color: #fff; /* Cambia el color del texto al pasar el ratón */
+    border-color: #007bff; /* Cambia el color del borde al pasar el ratón */
+}
+		
+		
+	</style>
+
+    <!-- Enlace a Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- Enlace al archivo de estilo CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+    <!-- Eliminando duplicados -->
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+</head>
+
+<body>
+
+  <!-- header -->
+  <header>
+      
+    <div class="container">
+      <div class="header__content" id="header__content">
+        <button class="btn-open-menu" id="btn-open-menu">
+          <i class="bx bx-menu"></i>
+        </button>
+        
+        <div class="header__logo">
+			<a th:href="@{/home}"><img src="/img/xing-logo-240.png" alt="logo"></a>
+        </div>
+        
+        
+        <nav>
+          <button class="btn-close-menu" id="btn-close-menu">
+            <i class="bx bx-left-arrow-alt"></i>
+          </button>
+          
+          <ul>
+			  
+			<li>
+              <a th:href="@{/home}">Home</a>
+            </li>
+            
+            <li>
+              <a th:href="@{/contenido}">Contenidos</a> 
+            </li>
+            
+            <li>
+              <a th:href="@{/opcionesDeTest(opcion=${'Test ERP'})}">Tipo de preguntas</a> 
+            </li>
+            
+            <li>
+              <a th:href="@{/preguntavf}">Empezar Test</a> 
+            </li>
+            
+ 
+          </ul>
+        </nav>
+        <div class="header__menu">
+          <ul>
+            
+             <li>
+              <a th:href="@{/listarVF}">Listar Preguntas</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <!-- EMPIEZA TABLA LISTADO --> 
+
+	<!-- Todos los class son de bootstrap -->
+	 <div class="container mt-5">
+        <h1 class="text-primary" th:text="${titulo}"></h1>
+
+      	<div class="text-right mt-3">
+    		<a class="btn btn-add-question" th:href="@{/formaddVF}">+ Añadir pregunta</a>
+		</div>
+        <!-- Tabla -->
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Pregunta</th>
+                        <th>Opciones</th>
+                        <th>Respuesta Correcta</th>
+                        <th>Operaciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="pregunta: ${preguntas}">
+                        <td th:text="${pregunta.id}"></td>
+                        <td th:text="${pregunta.pregunta}"></td>
+                        <td>
+                            <ul>
+                                <li th:each="opcion : ${pregunta.opciones}" th:text="${opcion}"></li>
+                            </ul>
+                        </td>
+                        <td th:text="${pregunta.respuestaCorrecta}"></td>
+                        
+                        <td class="operation-buttons">
+                            <a class="edit-button"
+                                th:href="@{/editVF/{id}(id=${pregunta.id})}">Editar</a>
+                            <a class="delete-button"
+                                th:href="@{/deleteVF/{id}(id=${pregunta.id})}">Eliminar</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+	
+	<!-- AQUI TERMINA TABLA LISTADO -->
+	
+	<!-- AQUI EMPIEZA EL PAGINADO --> 
+	
+	<!-- LISTADO PAGINADO  -->
+	<nav th:fragment="paginator" aria-label="Page navigation">
+		
+		<div class="pagination-container">
+
+		<ul class="pagination justify-content-center">
+			<li class="page-item"
+				th:class="${page.first? 'page-item disabled': 'page-item'}"><span
+				class="page-link" th:if="${page.first}">Primera</span> <a
+				class="page-link" th:if="${not page.first}"
+				th:href="@{${page.url}(page=0)}">Primera</a></li>
+				
+			<li class="page-item"
+				th:class="${not page.hasPrevious? 'page-item disabled': 'page-item'}">
+				<span class="page-link" th:if="${not page.hasPrevious}">&laquo;</span>
+				<a class="page-link" th:if="${page.hasPrevious}"
+				th:href="@{${page.url}(page=${page.paginaActual - 2})}">&laquo;</a>
+
+			</li>
+			<li class="page-item" th:each="item : ${page.paginas}"
+				th:class="${item.actual? 'page-item active': 'page-item'}"><span
+				class="page-link" th:if="${item.actual}" th:text="${item.numero}"></span>
+				<a class="page-link" th:if="${not item.actual}"
+				th:href="@{${page.url}(page=${item.numero - 1})}"
+				th:text="${item.numero}"></a></li>
+			<li class="page-item"
+				th:class="${not page.hasNext? 'page-item disabled': 'page-item'}">
+				<span class="page-link" th:if="${not page.hasNext}">&raquo;</span> <a
+				class="page-link" th:if="${page.hasNext}"
+				th:href="@{${page.url}(page=${page.paginaActual})}">&raquo;</a>
+			</li>
+			<li class="page-item"
+				th:class="${page.last? 'page-item disabled': 'page-item'}"><span
+				class="page-link" th:if="${page.last}">Última</span> <a
+				class="page-link" th:if="${not page.last}"
+				th:href="@{${page.url}(page=${page.totalPaginas - 1})}">Última</a></li>
+
+		</ul>
+		
+		</div>
+	</nav>
+	
+	<!-- AQUI TERMINA EL PAGINADO -->
+
+  <!-- footer -->
+  
+  <!-- footer -->
+
+  <!-- swiper -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <!-- swiper -->
+  <script src="/js/app.js"></script>
+  <!-- Bootstrap JS -->
+  
+  <!-- Scripts de Bootstrap (puedes reemplazarlo con tu propio enlace de Bootstrap) -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+
+<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+		crossorigin="anonymous"></script>
+
+		<script src="/js/bootstrap.bundle.min.js"></script>
+		
+		
+		 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="/js/app.js"></script>
+
+    <!-- Scripts de Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+		
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script th:inline="javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+        var botonesEliminar = document.querySelectorAll('.delete-button'); // Actualizado el selector
+
+        botonesEliminar.forEach(function(boton) {
+            boton.addEventListener('click', function(event) {
+                event.preventDefault();
+
+                Swal.fire({
+                    title: '¿Estás seguro?',
+                    text: 'No podrás deshacer esta acción',
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#d33',
+                    cancelButtonColor: '#3085d6',
+                    confirmButtonText: 'Sí, eliminar'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = boton.getAttribute('href');
+                    }
+                });
+            });
+        });
+    });
+</script>
+  
+</body>
+
+</html>

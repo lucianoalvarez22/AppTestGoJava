@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TestGo Contenidos</title>
+  <!-- google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <!-- google font -->
+  <!-- boxicons -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <!-- boxicons -->
+  <!-- swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <!-- swiper -->
+
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+  <!-- header -->
+  <header>
+      
+    <div class="container">
+      <div class="header__content" id="header__content">
+        <button class="btn-open-menu" id="btn-open-menu">
+          <i class="bx bx-menu"></i>
+        </button>
+        
+        <div class="header__logo">
+			<a th:href="@{/home}"><img src="/img/xing-logo-240.png" alt="logo"></a>
+        </div>
+        
+        
+        <nav>
+          <button class="btn-close-menu" id="btn-close-menu">
+            <i class="bx bx-left-arrow-alt"></i>
+          </button>
+          
+          <ul>
+			  
+			<li>
+              <a th:href="@{/home}">Home</a>
+            </li>
+            
+            <li>
+              <a th:href="@{/contenido}">Contenidos</a> 
+            </li>
+            
+            
+            <li>
+              <a href="#">Contacto</a>
+            </li>
+          </ul>
+        </nav>
+    
+      </div>
+    </div>
+  </header>
+  <!-- header -->
+
+  <!-- hero slider -->
+  <section>
+    <div class="hero">
+      <div class="swiper hero__swiper">
+        <div class="swiper-wrapper">
+			
+          <!-- slide item -->
+          <div class="swiper-slide">
+            <div class="hero__bg bg-image" 
+              style="background-image: url(/img/bg/fondo.jpg);"></div>
+            <div class="container">
+              <div class="hero__content">
+                <div class="hero__txt">
+                  <h2>Contenidos</h2>
+                  <p>Contenido de la App TestGo. Elige el tema con el que prefieras empezar un Test. </p>
+				 
+                </div>
+                <div class="hero__img">
+                   <img src="/img/products/Test1.png" alt="product image">
+                </div>
+              </div>
+            </div>
+          </div>
+
+    </div>
+  </section>
+  <!-- hero slider -->
+
+  <!-- top products -->
+  <section>
+    <div class="container">
+      <div class="top-product__header">
+        <h2 class="section__title no-margin">Elige tu Test</h2>
+        
+        <div class="top-product__swiper__btn" id="top-product__swiper__btn">
+          <div class="swiper-button btn-prev">
+            <i class="bx bx-chevron-left"></i>
+          </div>
+          <div class="swiper-button btn-next">
+            <i class="bx bx-chevron-right"></i>
+          </div>
+        </div>
+      </div>
+      <div class="swiper top-product__swiper">
+        <div class="swiper-wrapper">
+			
+			
+          <!-- slide item -->
+          <div class="swiper-slide">
+            <div class="product-card">
+              <div class="product__image">
+				  <a th:href="@{/opcionesDeTest(opcion=${'Test ERP'})}"><img src="/img/products/ERP.svg" alt="product image" title="Ir a Test ERP"></a>
+              </div>
+              <div class="product__info">
+				  <a th:href="@{/opcionesDeTest(opcion=${'Test ERP'})}"><h5 class="product__name" title="Ir a Test ERP">TEST ERP</h5></a>
+                <span class="product__price">+9k visitas</span>
+              </div>
+            </div>
+          </div>
+          <!-- slide item -->
+          <!-- slide item -->
+          <div class="swiper-slide">
+            <div class="product-card">
+              <div class="product__image">
+                <img src="/img/products/JS.png" alt="product image">
+              </div>
+              <div class="product__info">
+                <h5 class="product__name">TEST JS</h5>
+                <span class="product__price">+6.5k visitas</span>
+              </div>
+            </div>
+          </div>
+          <!-- slide item -->
+          <!-- slide item -->
+          <div class="swiper-slide">
+            <div class="product-card">
+              <div class="product__image">
+                <img src="/img/products/API.svg" alt="product image">
+              </div>
+              <div class="product__info">
+                <h5 class="product__name">Test API</h5>
+                <span class="product__price">+4k visitas</span>
+              </div>
+            </div>
+          </div>
+          <!-- slide item -->
+          <!-- slide item -->
+          <div class="swiper-slide">
+            <div class="product-card">
+              <div class="product__image">
+                <img src="/img/products/SQL2.svg" alt="product image">
+              </div>
+              <div class="product__info">
+                <h5 class="product__name">Test SQL</h5>
+                <span class="product__price">+3.5k visitas</span>
+              </div>
+            </div>
+          </div>
+          <!-- slide item -->
+          <!-- slide item -->
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- top products -->
+
+  <!-- category banner -->
+  <section>
+    <div class="container">
+      <h2 class="section__title">próximamente...</h2>
+      <div class="category__grid">
+        <!-- item -->
+        <div class="category__item category__top">
+          <div class="category__banner bg-image"
+            style="background-image: url(/img/bg/SPRING.png);"></div>
+          <div class="category__overlay"></div>
+          <div class="category__border"></div>
+          <div class="category__txt">Spring Framework</div>
+        </div>
+        <!-- item -->
+        <!-- item -->
+        <div class="category__item category__left">
+          <div class="category__banner bg-image"
+            style="background-image: url(/img/bg/PYTHON2.jpg);"></div>
+          <div class="category__overlay"></div>
+          <div class="category__border"></div>
+          <div class="category__txt">PYTHON</div>
+        </div>
+        <!-- item -->
+        <!-- item -->
+        <div class="category__item category__right">
+          <div class="category__banner bg-image"
+            style="background-image: url(/img/bg/HTML.svg);"></div>
+          <div class="category__overlay"></div>
+          <div class="category__border"></div>
+          <div class="category__txt">HTML + CSS</div>
+        </div>
+        <!-- item -->
+      </div>
+    </div>
+  </section>
+  <!-- category banner -->
+
+  <!-- footer -->
+  <footer>
+  <div class="container">
+    <div class="footer">
+      <div class="footer__col">
+        <a href="#" class="logo">
+          <img src="/img/xing-logo-240.png" alt="logo">
+        </a>
+        
+        <div class="social-list">
+          <a href="#">
+            <i class="bx bxl-facebook"></i>
+          </a>
+          <a href="#">
+            <i class="bx bxl-instagram"></i>
+          </a>
+          <a href="#">
+            <i class="bx bxl-youtube"></i>
+          </a>
+          <a href="#">
+            <i class="bx bxl-twitter"></i>
+          </a>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</footer>
+  <!-- footer -->
+
+  <!-- swiper -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <!-- swiper -->
+  <script src="/js/app.js"></script>
+</body>
+
+</html>

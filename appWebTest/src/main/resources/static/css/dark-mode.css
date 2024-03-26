@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+
+
+body.dark-mode {
+  /* Estilos para el modo oscuro */
+  background-color: #121212;
+  color: #ffffff;
+}
+
+header.dark-mode {
+  background-color: #000000 !important; /* Agrega !important si es necesario */
+}
+
+.hero__txt.dark-mode{
+	color: #000000 !important; 
+}
+

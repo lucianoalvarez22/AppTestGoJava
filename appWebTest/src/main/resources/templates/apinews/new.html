@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News API Demo</title>
+    
+     <link rel="stylesheet" href="/css/style.css">
+     <link rel="stylesheet" href="/css/dark-mode.css"/>
+     <link rel="stylesheet" href="/css/styleNews.css"/>
+
+  
+</head>
+<body>
+	
+	<!-- header -->
+  <header>
+	  
+    <div class="container">
+      <div class="header__content" id="header__content">
+        <button class="btn-open-menu" id="btn-open-menu">
+          <i class="bx bx-menu"></i>
+        </button>
+        
+        <div class="header__logo">
+          <img src="/img/xing-logo-240.png" alt="logo">
+        </div>
+        <nav>
+          <button class="btn-close-menu" id="btn-close-menu">
+            <i class="bx bx-left-arrow-alt"></i>
+          </button>
+          
+          
+          <ul>
+			  
+			  <li>
+              <a th:href="@{/home}">Home</a>
+            </li>
+            
+            <li>
+              <a th:href="@{/contenido}">Contenidos</a> 
+            </li>
+            
+            <li>
+              <a href="#">Contacto</a>
+            </li>
+            
+             <li>
+              <a th:href="@{/news/{keyword}}">ApiNews</a>
+            </li>
+          </ul>
+        </nav>
+        
+ <div class="header__menu">
+  <ul>
+    <li>
+      <!-- Estructura del interruptor -->
+      <div class="toggle-switch-container">
+        <label class="toggle-switch">
+          <input type="checkbox" id="toggleModoOscuro">
+          <span class="slider"></span>
+        </label>
+        <label for="toggleModoOscuro" class="modeDark">Modo Oscuro</label>
+      </div>
+    </li>
+  </ul>
+</div>
+
+
+        
+        
+      </div>
+    </div>
+  </header>
+  <!-- header -->
+  
+  <!-- AQUI EMPIEZAN LAS NOTICIAS --> 
+  
+  <div>
+  
+    <h1 th:text="${sports}" class="cabecera"></h1>
+    
+    <!-- Iterar sobre la lista de artículos y mostrar la información deseada -->
+    <div th:each="article : ${newsJson}" class="divinfo">
+        <h3 th:text="${article.title}"></h3>
+        <p th:text="${article.description}"></p>
+        
+        <!-- Mostrar la imagen -->
+        <img th:src="${article.urlToImage}" alt="Image not available" class="imagennews">
+        
+        <!-- Agrega más campos según sea necesario -->
+    </div>
+    
+  </div>
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+      <script src="/js/main.js"></script>
+</body>
+</html>
